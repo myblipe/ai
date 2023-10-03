@@ -14,15 +14,15 @@ auto = pd.read_csv('auto-mpg.csv')
 print(auto.shape)
 
 
-X = auto.iloc[:, 1:-1] # wybierz kolumny od drugiej do przedostatniej
-X = X.drop('horsepower', axis=1) # usuń kolumnę 'horsepower'
+X = auto.iloc[:, 1:-1] # select columns from the second to the second-to-last
+X = X.drop('horsepower', axis=1) # delete column 'horsepower'
     
 y = auto.loc[:,'mpg']
 
 X.head()
 y.head()
 
-    # tworzymy model
+    # create model
 lr = LinearRegression()
 lr.fit(X.to_numpy(), y)
 lr.score(X.to_numpy(), y)
